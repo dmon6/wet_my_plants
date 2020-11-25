@@ -20,3 +20,7 @@ Raspberry PI Project for Derek to automatically water plants
 
 ---    
 TODO: Add Block Diagram, raspberry pi setup, python code,  
+
+## Block Diagram
+
+![Image of Block Diagram](images/plant_drawing.jpg)
