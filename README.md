@@ -1,6 +1,9 @@
 # wet_my_plants
 Raspberry PI Project for Derek to automatically water plants
 
+__TODO:__ Add table of pinout? Raspberry Pi setup, Python code
+
+
 ## Hardware
 - Raspberry PI 3
 - 12V Power Supply
@@ -19,7 +22,6 @@ Raspberry PI Project for Derek to automatically water plants
     - pyserial
 
 ---    
-TODO: Add Block Diagram, raspberry pi setup, python code,  
 
 ## Block Diagram
 
