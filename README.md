@@ -52,3 +52,29 @@ These are the settings of the serial port we'll be interfacing with
 | -------- | ---------- |
 | Port     | /dev/ttyS0 |
 | Baudrate | 9600       |
+
+
+## Ethernet setup
+You can also use a ethernet controlled relay to save yourself some space on the GPIO board or if you're more comfortable using python socket library. You can set a static IP on eth0 to communicate to the ethernet device. The raspberry pi is a little different than other linux distros where you'll modify the '/etc/network/interfaces' or the '/etc/sysconfig/network-scripts/ifcfg-<dev>' file. You'll need to add the following lines to the /etc/dhcpcd.conf file on the raspian image.
+
+
+```sh
+sudo vim /etc/dhcpcd.conf
+```
+
+Add the following to the bottom of the '/etc/dhcpcd.conf' file
+
+```
+interface eth0
+
+static ip_address=192.168.1.94/24
+static routers=192.168.1.1
+static
+domain_name_servers=192.168.1.1
+```
+
+Then you'll need to reboot the raspberry pi
+
+```sh
+sudo reboot
+```
