@@ -14,18 +14,12 @@ __TODO:__ Add table of pinout? Raspberry Pi setup, Python code
 - Various Cables to connect
 - Serial Controlled Relay
 
-## Software
-- Raspian image
-- Python 3.4+
-    - flask
-    - RPi.GPIO
-    - pyserial
 
 ---    
 
 ## Block Diagram
 
-![Image of Block Diagram](images/plant_drawing.jpg)
+![Image of Block Diagram](static/media/plant_drawing.jpg)
 
 ## Setting up the Raspberry PI
 
@@ -78,3 +72,48 @@ Then you'll need to reboot the raspberry pi
 ```sh
 sudo reboot
 ```
+
+## Setting up the code
+
+The code needs to run off of python3.4+. By default, the raspberry pi's image has both 'python2.7' and 'python3.4' so we won't need to install python3+.
+
+Make a directory to put the code, clone repository, and go into that directory
+```sh
+mkdir ~/git/
+git clone https://github.com/dmon6/wet_my_plants.git
+cd ~/git/wet_my_plants
+```
+
+Install virtualenv for a clean workspace for python
+```sh
+pip3 install virtualenv
+```
+
+Create a new virtualenv and activate. In this tutorial I name my environment "env"
+```sh
+# Creates virtualenv called env
+virtualenv -p python3 env
+
+# Activate env
+source env/bin/activate
+
+# If you ever need to deactivate the env run this
+deactivate
+```
+
+After activating 'env', you should see '(env)' in your prompt
+```sh
+(env)pi@somewhere wet_my_plants $
+```
+
+Install requirements.txt for all the dependencies needed for the web app
+```sh
+pip3 install -r requirements.txt
+```
+
+Run the flask app
+```sh
+python app.py
+```
+
+The server is currently set to debug mode, you can see the site at localhost:5000
