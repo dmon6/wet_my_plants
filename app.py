@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-posts = [{
+picture_posts = [{
                 'filename': 'media/baby_yoda.png',
                 'description': 'Baby Yoda'
             },
@@ -25,7 +25,7 @@ def about():
 
 @app.route('/pictures', methods=['GET', 'POST']) 
 def pictures():
-    return render_template('pictures.html', title='Pictures', posts=posts)
+    return render_template('pictures.html', title='Pictures', posts=picture_posts)
 
 if __name__ == '__main__':
     app.run(debug=True)
