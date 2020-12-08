@@ -12,5 +12,4 @@ class DerekWateringService(object):
 
     def get_moisture(self):
         new_rand = random.randrange(0, 99)
-        print(new_rand)
         return new_rand
